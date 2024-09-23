@@ -35,7 +35,7 @@ router.post("/getid", async (req, res) => {
         email: req.body.email,
         password: req.body.password,
       })
-      .select({ _id: 1, name: 1 });
+      .select({ _id: 1, name: 1, email: 1 });
     if (!check) return res.status(400).json({ error: "Invalid data provided" });
     res.status(200).send(check);
     res.end();
